@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/partherope/GoProject/td1"
+	td1 "github.com/partherope/GoProject/TD1"
 )
 
 func main() {
