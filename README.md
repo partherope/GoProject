@@ -13,3 +13,11 @@ go doc
 Go的对象使用首字母大小写区分private和public参数和方法
 
 全局constante变量必须是简单变量，不能是组合变量
+
+### 切片是对原来数组的引用，修改它会修改原数组的值
+func Fill(sl []int) {
+	for i := 0; i < len(sl); i++ {
+		sl[i] = rand.Int()
+	}
+}
+
