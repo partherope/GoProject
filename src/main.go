@@ -1,14 +1,17 @@
 package main
 
-import (
-	"fmt"
+import "fmt"
 
-	td1 "github.com/partherope/GoProject/TD1"
-)
+var val int
 
+func f(c chan int) {
+	val = <-c
+}
 func main() {
-	A := td1.NewPoint2D(1, 2)
-	B := td1.NewPoint2D(3, 4)
-	RecA := td1.NewRectangle(A, B)
-	fmt.Println(RecA.P1().X())
+	c := make(chan int)
+
+	c <- 12 // write to a channel
+	close(c)
+	go f(c)
+	fmt.Println("val:", val)
 }
